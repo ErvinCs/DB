@@ -23,6 +23,8 @@ BEGIN
 	DROP TABLE dbo.donors
 	IF OBJECT_ID('dbo.addresses', 'U') IS NOT NULL
 	DROP TABLE dbo.addresses
+	IF OBJECT_ID('dbo.tableVersions', 'U') IS NOT NULL
+	DROP TABLE dbo.tableVersions
 END
 
 CREATE TABLE addresses(
@@ -169,8 +171,8 @@ CREATE TABLE appointments(
 
 CREATE TABLE test_results(
 	result_id INT NOT NULL PRIMARY KEY,
-	rh CHAR(3),
-	blood_group CHAR(2),
+	rh CHAR(4),
+	blood_group CHAR(4),
 	hiv BIT,
 	hepatitis_C BIT
 	--/(1-1) blood_samples
@@ -193,4 +195,9 @@ CREATE TABLE blood_samples(
 	sample_donation INT REFERENCES donations(donation_id) NOT NULL
 	CONSTRAINT sample_donation UNIQUE (sample_donation)
 );
+
+CREATE TABLE tableVersions (
+	version_id INT NOT NULL PRIMARY KEY
+);
+
 GO
