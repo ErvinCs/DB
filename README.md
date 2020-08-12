@@ -1,5 +1,5 @@
-# Simplified BloodDonation. database 
-A simplified version of the database used in the BloodDonation. project. <br/>
+# Databases
+A simplified version of the database used in the <a href="https://github.com/ErvinCs/ISS-BloodDonation">BloodDonation. project</a>. <br/>
 Contains aditional indexes to speed up key queries and a database versioning mechanism. <br/>
 **Learned:**
 * SQL key concepts 
